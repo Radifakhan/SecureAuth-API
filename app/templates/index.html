@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SecureAuth API</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body>
+  <main>
+    <h1>SecureAuth API</h1>
+    <p>Register an account, sign in, then try the protected profile endpoint.</p>
+    <section>
+      <h2>Account</h2>
+      <label for="email">Email</label>
+      <input id="email" type="email" autocomplete="email">
+      <label for="password">Password</label>
+      <input id="password" type="password" autocomplete="current-password">
+      <div class="actions">
+        <button id="register" type="button">Register</button>
+        <button id="login" type="button">Log in</button>
+        <button id="profile" type="button">Call protected endpoint</button>
+      </div>
+    </section>
+    <pre id="result" role="status" aria-live="polite">Ready.</pre>
+  </main>
+</body>
+</html>
+

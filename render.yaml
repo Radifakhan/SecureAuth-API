@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: secureauth-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn wsgi:app --bind 0.0.0.0:$PORT
+    healthCheckPath: /
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        value: sqlite:///secureauth.db
+      - key: BCRYPT_LOG_ROUNDS
+        value: "12"
